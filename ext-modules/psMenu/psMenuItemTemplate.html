@@ -1,0 +1,9 @@
+<!--!isVertical() dont have access to scope on the ctrlr so instead gets value from ctrlr-->
+<li class="ps-selectable-item" ng-class="{'ps-item-horizontal': !isVertical()}">
+    <div class="ps-noselect">
+        <i class="fa {{icon}} ps-menu-icon"></i>
+        {{label}}
+    </div>
+    <i ng-if="isActive() && isVertical()"
+       class="fa fa-2x fa-caret-left ps-menu-active-indicator"
+</li><!--remvoves class if ng-if is not true-->

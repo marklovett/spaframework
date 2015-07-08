@@ -1,0 +1,12 @@
+<li class="ps-selectable-item" ng-click="clicked()" ng-class="{'ps-item-horizontal': !isVertical()}">
+    <div class="ps-noselect">    <!--prevents text from highlighting-->
+        <i class="fa {{icon}} ps-menu-icon"></i>
+        {{label}}
+        <i ng-if="isVertical()"
+           class="fa fa-chevron-left ps-group-indicator-left"
+           ng-class="{'fa-rotate-270': isOpen}"></i> <!--rotates icon down when isOpen true-->
+    </div>
+</li>  <!--clk li above (equipment) toggles isOpen, which adds/removes ng-hide class as ng-show toggles-->
+<div ng-show="isOpen" class="ps-subitem-section ps-fade-in-animation" ng-class="{'ps-popup-menu': !isVertical() }">   <!--assigns new class ps-popup-menu to element when horizontal,only shows submenu if isOpen is true , looks at isOpen flag on our scope-->
+    <ul ng-transclude></ul>
+</div>
